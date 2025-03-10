@@ -1,0 +1,84 @@
+{
+  "AIchatOS": {
+    "endpoint": "https://api.binjie.fun/api/generateStream",
+    "expectedOrigin": {
+      "url": "https://chat18.aichatos68.com",
+      "headers": { "Accept": "application/json, text/plain, * /*", "Priority": "u=0", "Sec-Fetch-Site": "cross-site" }
+    },
+    "method": "POST",
+    "parsingRequired": false,
+    "respPatterns": { "fail": "很抱歉地|系统公告|文字过长，请删减后重试" },
+    "streamable": true,
+    "supportsLongPrompts": false
+  },
+  "FREEGPT": {
+    "endpoint": "https://am.aifree.site/api/generate",
+    "expectedOrigin": {
+      "url": "https://am.aifree.site",
+      "headers": { "Alt-Used": "am.aifree.site", "Content-Type": "text/plain;charset=UTF-8", "Priority": "u=4" }
+    },
+    "method": "POST",
+    "parsingRequired": false,
+    "respPatterns": {
+      "fail": "{\"error\":{\"message\":\"|当日额度已用完,请明天再来吧|当前地区当日额度已消耗完, 请尝试更换网络环境" },
+    "streamable": true,
+    "supportsLongPrompts": true
+  },
+  "GPTforLove": {
+    "endpoint": "https://api11.gptforlove.com/chat-process",
+    "expectedOrigin": {
+      "url": "https://ai28.gptforlove.com",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Priority": "u=0", "Sec-Fetch-Site": "same-site", "TE": "trailers"
+      }
+    },
+    "method": "POST",
+    "parsingRequired": true,
+    "respPatterns": { "done": "\"finish_reason\":\"stop\"", "fail": "\"data\":null,\"status\":\"Fail\"}" },
+    "streamable": true,
+    "supportsLongPrompts": true
+  },
+  "MixerBox AI": {
+    "endpoint": "https://chatai.mixerbox.com/api/chat/stream",
+    "expectedOrigin": {
+      "url": "https://chatai.mixerbox.com", "headers": { "Alt-Used": "chatai.mixerbox.com", "TE": "trailers" }
+    },
+    "method": "POST",
+    "parsingRequired": true,
+    "respPatterns": { "done": "data:(?:message_end|done)" },
+    "streamable": true,
+    "supportsLongPrompts": true
+  },
+  "OpenAI": {
+    "endpoints": {
+      "auth": "https://auth0.openai.com",
+      "completions": "https://api.openai.com/v1/chat/completions",
+      "session": "https://chatgpt.com/api/auth/session"
+    },
+    "expectedOrigin": { "url": "https://chatgpt.com", "headers": { "Priority": "u=4" }},
+    "method": "POST",
+    "streamable": true
+  }
+ },
+  "Penguinai.abby.is-a.dev": {
+    "endpoint": "https://penguinai.abby.is-a.dev/v1/chat/completions",
+    "expectedOrigin": {
+      "url": "https://penguinai.abby.is-a.dev", "headers": { "Alt-Used": "penguinai.abby.is-a.dev", "TE": "trailers" }
+    },
+    "method": "POST",
+    "parsingRequired": true,
+    "respPatterns": { "done": "data:(?:message_end|done)" },
+    "streamable": true,
+    "supportsLongPrompts": true
+     },
+  "Penguinai.abby.is-a.dev": {
+    "endpoint": "https://penguinai.abby.is-a.dev/v1/chat/completions",
+    "expectedOrigin": {
+      "url": "https://penguinai.abby.is-a.dev", "headers": { "Alt-Used": "penguinai.abby.is-a.dev", "TE": "trailers" }
+    },
+    "method": "POST",
+    "parsingRequired": true,
+    "respPatterns": { "done": "data:(?:message_end|done)" },
+    "streamable": true,
+    "supportsLongPrompts": true
